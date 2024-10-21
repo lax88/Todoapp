@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Your Todo List</h1>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo.title }}</li>
+        {% empty %}
+            <li>No todos available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add-todo' %}">Add a new Todo</a>
+</body>
+</html>
